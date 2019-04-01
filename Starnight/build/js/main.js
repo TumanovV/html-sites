@@ -89,3 +89,46 @@ $(function(){
     })
     
 })
+
+
+//плавный скролл якорей 
+$(function(){
+  $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 500);
+    });
+});
+})
+
+
+$(function(){
+  let humburgerButton = document.getElementById('humburger');
+ 
+    humburgerButton.addEventListener('click', function () {
+
+      let menu = document.getElementById('menu'),
+          styleMenu = window.getComputedStyle(menu),
+          positionValue = styleMenu.getPropertyValue('top'),
+          isOdd = true;
+
+          if( positionValue === '-200px'){
+            menu.style.top = '0px';
+            humburgerButton.classList.add('humburger_active');
+          }else{
+            menu.style.top = '-200px';
+            humburgerButton.classList.remove('humburger_active');
+          };
+         
+  })
+})
+
+//убираем функциональность ссылок
+$(function () {
+      $('a').on('click', function(e){
+        e.preventDefault();
+      })
+   
+})
