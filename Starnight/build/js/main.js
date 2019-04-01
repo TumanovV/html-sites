@@ -71,7 +71,7 @@ $(function(){
       var activeSlide = items.filter('.active');
       var nextItem = activeSlide.next();
       var prevItem = activeSlide.prev();
-      console.log('check');
+     
       
     
       if($this.hasClass('controls_right')){
